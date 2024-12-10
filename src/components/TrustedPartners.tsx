@@ -28,7 +28,10 @@ export const TrustedPartners = () => {
             Trusted Partners
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Integrated with leading mobile money operators in DRC
+            Integrated with leading mobile money operators in DRC and Cameroon
+          </p>
+          <p className="mt-2 text-sm text-gray-500">
+            Currently operating in the Democratic Republic of Congo and Cameroon
           </p>
         </div>
 
