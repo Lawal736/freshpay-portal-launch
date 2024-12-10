@@ -2,12 +2,14 @@ import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Stats } from "@/components/Stats";
 import { Footer } from "@/components/Footer";
+import { TrustedPartners } from "@/components/TrustedPartners";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
       <Features />
+      <TrustedPartners />
       <Stats />
       <Footer />
     </main>
