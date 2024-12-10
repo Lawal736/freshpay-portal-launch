@@ -1,24 +1,30 @@
-import { ChartBar, Lock, Wallet } from "lucide-react";
+import { Wallet, Globe, ShoppingCart, Bank } from "lucide-react";
 
 export const Features = () => {
   const features = [
     {
       icon: Wallet,
-      title: "Seamless Payments",
+      title: "Mobile Money Integration",
       description:
-        "Accept payments quickly and securely with our optimized checkout experience",
+        "Direct integration with all major mobile money operators in DRC: Airtel Money, Orange Money, M-Pesa, and AfriMoney for seamless deposits and withdrawals",
     },
     {
-      icon: ChartBar,
-      title: "Business Insights",
+      icon: Globe,
+      title: "International Remittance",
       description:
-        "Get detailed analytics and reports to understand your business better",
+        "Send money directly to FreshPay Wallet, Mobile Money Wallet, or Bank account from anywhere in the world",
     },
     {
-      icon: Lock,
-      title: "Secure Platform",
+      icon: ShoppingCart,
+      title: "Merchant Collection",
       description:
-        "Enterprise-grade security with 24/7 fraud monitoring and prevention",
+        "Streamlined payment collection solutions for businesses of all sizes",
+    },
+    {
+      icon: Bank,
+      title: "Bank & Wallet Transfers",
+      description:
+        "Effortless transfers between bank accounts and digital wallets",
     },
   ];
 
@@ -27,14 +33,14 @@ export const Features = () => {
       <div className="container">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-secondary">
-            Everything you need to grow your business
+            Comprehensive Financial Solutions
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Powerful features to help you manage payments and grow your business
+            Integrated services that power your financial operations
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <div
               key={feature.title}
