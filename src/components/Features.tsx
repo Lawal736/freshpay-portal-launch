@@ -26,7 +26,7 @@ export const Features = () => {
     <section className="py-24 bg-white">
       <div className="container">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-secondary">
             Everything you need to grow your business
           </h2>
           <p className="mt-4 text-lg text-gray-600">
@@ -43,7 +43,7 @@ export const Features = () => {
               <div className="rounded-xl bg-primary/10 p-3">
                 <feature.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mt-4 text-xl font-semibold">{feature.title}</h3>
+              <h3 className="mt-4 text-xl font-semibold text-secondary">{feature.title}</h3>
               <p className="mt-2 text-center text-gray-600">
                 {feature.description}
               </p>

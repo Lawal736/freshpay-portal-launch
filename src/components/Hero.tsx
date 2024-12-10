@@ -7,18 +7,19 @@ export const Hero = () => {
       <div className="container relative z-10">
         <div className="text-center">
           <h1 className="animate-fade-up text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
-            Modern payments for{" "}
-            <span className="text-primary">growing businesses</span>
+            <span className="text-primary">Fresh</span>
+            <span className="text-secondary">Pay</span>{" "}
+            <span className="block mt-2">for growing businesses</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl animate-fade-up text-lg leading-8 text-gray-600 [animation-delay:200ms]">
             Accept payments, send payouts, and manage your business's entire
             financial operations with FreshPay's powerful platform.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-up [animation-delay:400ms]">
-            <Button size="lg" className="h-12 px-6">
+            <Button size="lg" className="h-12 px-6 bg-primary hover:bg-primary/90">
               Create free account
             </Button>
-            <Button variant="outline" size="lg" className="h-12 px-6">
+            <Button variant="outline" size="lg" className="h-12 px-6 border-secondary text-secondary hover:bg-secondary/10">
               Contact sales
             </Button>
           </div>
@@ -53,7 +54,7 @@ export const Hero = () => {
               <div className="rounded-2xl bg-white p-4 shadow-md">
                 <feature.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
+              <h3 className="mt-4 text-lg font-semibold text-secondary">{feature.title}</h3>
               <p className="mt-2 text-sm text-gray-600">{feature.description}</p>
             </div>
           ))}

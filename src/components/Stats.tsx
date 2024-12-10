@@ -13,7 +13,7 @@ export const Stats = () => {
               className="text-center"
             >
               <div className="text-4xl font-bold text-primary">{stat.number}</div>
-              <div className="mt-2 text-gray-600">{stat.label}</div>
+              <div className="mt-2 text-secondary">{stat.label}</div>
             </div>
           ))}
         </div>
