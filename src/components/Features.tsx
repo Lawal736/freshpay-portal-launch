@@ -1,4 +1,4 @@
-import { Wallet, Globe, ShoppingCart, Bank } from "lucide-react";
+import { Wallet, Globe, ShoppingCart, Building2 } from "lucide-react";
 
 export const Features = () => {
   const features = [
@@ -21,7 +21,7 @@ export const Features = () => {
         "Streamlined payment collection solutions for businesses of all sizes",
     },
     {
-      icon: Bank,
+      icon: Building2,
       title: "Bank & Wallet Transfers",
       description:
         "Effortless transfers between bank accounts and digital wallets",
