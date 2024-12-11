@@ -4,8 +4,8 @@ export const Stats = () => {
       <div className="container">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {[
-            { number: "10M+", label: "Transactions processed" },
-            { number: "50k+", label: "Active merchants" },
+            { number: "50M+", label: "Transactions processed" },
+            { number: "100+", label: "Active merchants" },
             { number: "99.9%", label: "Uptime guaranteed" },
           ].map((stat) => (
             <div
