@@ -30,7 +30,11 @@ export const MenuBar = () => {
       <div className="flex h-16 items-center px-4 container mx-auto">
         <div className="mr-4 flex">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-primary">FreshPay</span>
+            <img 
+              src="/lovable-uploads/0ee92787-a6b7-4cef-96e3-83dd615b6e6b.png" 
+              alt="FreshPay Logo" 
+              className="h-8"
+            />
           </Link>
         </div>
         <NavigationMenu>
