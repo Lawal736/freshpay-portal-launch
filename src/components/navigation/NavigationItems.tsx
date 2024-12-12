@@ -54,20 +54,20 @@ export const NavigationItems = () => {
             <NavigationMenuTrigger className="bg-background">Resources</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 bg-white">
-                <ListItem href="skype:live:lawalm?chat" title="Support">
+                <ListItem href="skype:live:lawalm?chat" title="Support" className="w-full">
                   Get help from our support team
                 </ListItem>
-                <li>
+                <div className="w-full">
                   <button
                     onClick={() => setShowEmailDialog(true)}
-                    className="block w-full select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                    className="w-full text-left select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                   >
                     <div className="text-sm font-medium leading-none">Contact</div>
                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                       Get in touch with us
                     </p>
                   </button>
-                </li>
+                </div>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
