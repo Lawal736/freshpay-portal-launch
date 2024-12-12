@@ -15,7 +15,7 @@ export const MenuBar = () => {
         <Logo />
         
         {/* Desktop Navigation */}
-        <div className="hidden md:block">
+        <div className="hidden md:block ml-8">
           <NavigationItems />
         </div>
 
@@ -34,7 +34,7 @@ export const MenuBar = () => {
         </div>
 
         {/* Desktop Auth Buttons */}
-        <div className="hidden md:block">
+        <div className="hidden md:block ml-auto">
           <AuthButtons />
         </div>
       </div>
