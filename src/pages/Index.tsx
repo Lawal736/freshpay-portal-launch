@@ -14,7 +14,7 @@ const Index = () => {
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: MessageSquare, href: "#", label: "Telegram" },
-    { icon: Phone, href: "#", label: "Skype" }
+    { icon: Phone, href: "skype:live:lawalm?chat", label: "Skype" }
   ];
 
   return (
