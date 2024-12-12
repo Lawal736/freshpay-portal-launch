@@ -1,7 +1,11 @@
 import { CreditCard, Globe, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { EmailDialog } from "./EmailDialog";
+import { useState } from "react";
 
 export const Hero = () => {
+  const [showEmailDialog, setShowEmailDialog] = useState(false);
+
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 pt-20 pb-16 md:pt-32 md:pb-24">
       <div className="container relative z-10">
@@ -16,10 +20,19 @@ export const Hero = () => {
             financial operations with FreshPay's powerful platform.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-up [animation-delay:400ms]">
-            <Button size="lg" className="h-12 px-6 bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="h-12 px-6 bg-primary hover:bg-primary/90"
+              onClick={() => setShowEmailDialog(true)}
+            >
               Create free account
             </Button>
-            <Button variant="outline" size="lg" className="h-12 px-6 border-secondary text-secondary hover:bg-secondary/10">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="h-12 px-6 border-secondary text-secondary hover:bg-secondary/10"
+              onClick={() => setShowEmailDialog(true)}
+            >
               Contact sales
             </Button>
           </div>
@@ -60,6 +73,8 @@ export const Hero = () => {
           ))}
         </div>
       </div>
+
+      <EmailDialog open={showEmailDialog} onOpenChange={setShowEmailDialog} />
     </div>
   );
 };

@@ -29,7 +29,7 @@ export const PoweringGrowth = () => {
     },
     {
       name: "BetandU",
-      logo: "/placeholder.svg",
+      logo: "/lovable-uploads/3ded02ea-641c-43b1-8751-19e79896b74e.png",
       alt: "BetandU logo"
     }
   ];
