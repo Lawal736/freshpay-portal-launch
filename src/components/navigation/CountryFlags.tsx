@@ -19,16 +19,19 @@ export const CountryFlags = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedCountry, setSelectedCountry] = useState(countries[0]) // Default to DR Congo
+  const [selectedCountry, setSelectedCountry] = useState(countries[0])
 
-  // Update selected country based on current route
   useEffect(() => {
     if (location.pathname === "/nigeria-interest") {
       setSelectedCountry(countries.find(c => c.code === "NG") || countries[0])
     } else if (location.pathname === "/ghana-interest") {
       setSelectedCountry(countries.find(c => c.code === "GH") || countries[0])
+    } else if (location.pathname === "/senegal-interest") {
+      setSelectedCountry(countries.find(c => c.code === "SN") || countries[0])
+    } else if (location.pathname === "/cameroon-interest") {
+      setSelectedCountry(countries.find(c => c.code === "CM") || countries[0])
     } else {
-      setSelectedCountry(countries[0]) // Set to DR Congo for homepage and other routes
+      setSelectedCountry(countries[0])
     }
   }, [location.pathname])
 
@@ -39,8 +42,12 @@ export const CountryFlags = () => {
       navigate("/nigeria-interest")
     } else if (country.code === "GH") {
       navigate("/ghana-interest")
+    } else if (country.code === "SN") {
+      navigate("/senegal-interest")
+    } else if (country.code === "CM") {
+      navigate("/cameroon-interest")
     } else if (country.code === "CD") {
-      navigate("/") // Navigate to homepage for DR Congo
+      navigate("/")
     }
   }
 

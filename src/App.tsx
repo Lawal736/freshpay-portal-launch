@@ -8,6 +8,8 @@ import Pricing from "./pages/Pricing";
 import ContactSales from "./pages/ContactSales";
 import NigeriaInterest from "./pages/NigeriaInterest";
 import GhanaInterest from "./pages/GhanaInterest";
+import SenegalInterest from "./pages/SenegalInterest";
+import CameroonInterest from "./pages/CameroonInterest";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/contact-sales" element={<ContactSales />} />
           <Route path="/nigeria-interest" element={<NigeriaInterest />} />
           <Route path="/ghana-interest" element={<GhanaInterest />} />
+          <Route path="/senegal-interest" element={<SenegalInterest />} />
+          <Route path="/cameroon-interest" element={<CameroonInterest />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
