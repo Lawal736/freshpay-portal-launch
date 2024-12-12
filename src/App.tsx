@@ -10,6 +10,7 @@ import NigeriaInterest from "./pages/NigeriaInterest";
 import GhanaInterest from "./pages/GhanaInterest";
 import SenegalInterest from "./pages/SenegalInterest";
 import CameroonInterest from "./pages/CameroonInterest";
+import SignUp from "./pages/SignUp";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/create-account" element={<Navigate to="/" state={{ openEmailDialog: true }} />} />
+          <Route path="/create-account" element={<SignUp />} />
           <Route path="/contact-sales" element={<ContactSales />} />
           <Route path="/nigeria-interest" element={<NigeriaInterest />} />
           <Route path="/ghana-interest" element={<GhanaInterest />} />
