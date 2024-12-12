@@ -1,16 +1,17 @@
+import { useState } from "react";
 import { MenuBar } from "@/components/MenuBar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Link } from "react-router-dom";
 import { Eye } from "lucide-react";
-import { africanCountryCodes } from "@/utils/countryData";
+import { CountrySelect } from "@/components/signup/CountrySelect";
+import { PhoneInput } from "@/components/signup/PhoneInput";
 
 const formSchema = z.object({
   country: z.string(),
@@ -26,10 +27,12 @@ const formSchema = z.object({
 });
 
 const SignUp = () => {
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+243");
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      country: "DR Congo",
+      country: "CD",
       countryCode: "+243",
       businessType: "starter",
       isDeveloper: "no",
@@ -43,43 +46,18 @@ const SignUp = () => {
   return (
     <div className="min-h-screen bg-white">
       <MenuBar />
-      <div className="h-16 bg-primary"></div>
+      <div className="h-16 bg-[#F5821F]"></div>
       <div className="container max-w-xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-semibold text-center mb-8">CREATE YOUR ACCOUNT</h1>
         
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <FormField
-              control={form.control}
-              name="country"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Country</FormLabel>
-                  <Select 
-                    onValueChange={(value) => {
-                      field.onChange(value);
-                      const countryData = africanCountryCodes.find(c => c.country === value);
-                      if (countryData) {
-                        form.setValue('countryCode', countryData.code);
-                      }
-                    }} 
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a country" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {africanCountryCodes.map((country) => (
-                        <SelectItem key={country.code} value={country.country}>
-                          {country.country}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </FormItem>
-              )}
+            <CountrySelect 
+              form={form} 
+              onCountryChange={(code) => {
+                setSelectedCountryCode(code);
+                form.setValue("countryCode", code);
+              }}
             />
 
             <FormField
@@ -95,31 +73,33 @@ const SignUp = () => {
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="firstName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>First Name</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <FormField
+                control={form.control}
+                name="firstName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>First Name</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
 
-            <FormField
-              control={form.control}
-              name="lastName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Last Name</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
+              <FormField
+                control={form.control}
+                name="lastName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Last Name</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
 
             <FormField
               control={form.control}
@@ -134,40 +114,10 @@ const SignUp = () => {
               )}
             />
 
-            <div className="space-y-2">
-              <FormLabel>Phone Number</FormLabel>
-              <div className="flex gap-2">
-                <FormField
-                  control={form.control}
-                  name="countryCode"
-                  render={({ field }) => (
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger className="w-[140px]">
-                          <SelectValue placeholder="Select code" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {africanCountryCodes.map((country) => (
-                          <SelectItem key={country.code} value={country.code}>
-                            {country.code} ({country.country})
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="phoneNumber"
-                  render={({ field }) => (
-                    <FormControl>
-                      <Input {...field} className="flex-1" placeholder="802 123 4567" />
-                    </FormControl>
-                  )}
-                />
-              </div>
-            </div>
+            <PhoneInput 
+              form={form}
+              selectedCountryCode={selectedCountryCode}
+            />
 
             <FormField
               control={form.control}
