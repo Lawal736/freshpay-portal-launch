@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,34 +16,43 @@ const countries = [
 
 export const CountryFlags = () => {
   const [selectedCountry, setSelectedCountry] = useState(countries[0])
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="p-0 h-8 w-8">
-          <img
-            src={selectedCountry.flag}
-            alt={`${selectedCountry.name} flag`}
-            className="w-full h-full object-cover rounded"
-          />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-white">
-        {countries.map((country) => (
-          <DropdownMenuItem
-            key={country.code}
-            onClick={() => setSelectedCountry(country)}
-            className="flex items-center gap-2 cursor-pointer"
-          >
+    <div 
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+        <DropdownMenuTrigger asChild>
+          <button className="p-0 h-8 w-8 rounded overflow-hidden hover:ring-2 hover:ring-primary focus:outline-none">
             <img
-              src={country.flag}
-              alt={`${country.name} flag`}
-              className="w-6 h-4 object-cover"
+              src={selectedCountry.flag}
+              alt={`${selectedCountry.name} flag`}
+              className="w-full h-full object-cover"
             />
-            <span>{country.name}</span>
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="bg-white">
+          {countries.map((country) => (
+            <DropdownMenuItem
+              key={country.code}
+              onClick={() => {
+                setSelectedCountry(country)
+                setIsOpen(false)
+              }}
+              className="flex items-center gap-2 cursor-pointer hover:bg-gray-100"
+            >
+              <img
+                src={country.flag}
+                alt={`${country.name} flag`}
+                className="w-6 h-4 object-cover"
+              />
+              <span>{country.name}</span>
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   )
 }
