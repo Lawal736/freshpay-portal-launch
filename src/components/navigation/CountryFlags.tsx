@@ -51,7 +51,7 @@ export const CountryFlags = () => {
     >
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild>
-          <button className="p-0 h-8 w-8 rounded overflow-hidden hover:ring-2 hover:ring-primary focus:outline-none">
+          <button className="p-0 h-6 w-6 rounded overflow-hidden hover:ring-2 hover:ring-primary focus:outline-none">
             <img
               src={selectedCountry.flag}
               alt={`${selectedCountry.name} flag`}
@@ -69,7 +69,7 @@ export const CountryFlags = () => {
               <img
                 src={country.flag}
                 alt={`${country.name} flag`}
-                className="w-6 h-4 object-cover"
+                className="w-5 h-3 object-cover"
               />
               <span>{country.name}</span>
             </DropdownMenuItem>
