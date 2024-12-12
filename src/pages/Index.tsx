@@ -9,7 +9,7 @@ import { Facebook, Twitter, Instagram, Linkedin, MessageSquare, Phone } from "lu
 
 const Index = () => {
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Facebook, href: "https://m.facebook.com/profile.php?id=61556072782923&name=xhp_nt__fb__action__open_user", label: "Facebook" },
     { icon: Twitter, href: "https://x.com/freshpayc?s=21", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/gofreshpay?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", label: "LinkedIn" },
