@@ -28,7 +28,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="h-12 px-6 bg-primary hover:bg-primary/90"
-              onClick={() => setShowEmailDialog(true)}
+              onClick={() => navigate("/create-account")}
             >
               Create free account
             </Button>
