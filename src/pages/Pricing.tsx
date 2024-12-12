@@ -4,44 +4,42 @@ import { Check } from "lucide-react";
 
 const Pricing = () => {
   const features = [
-    "Accept payments",
-    "Recurring billing",
-    "Payment links",
-    "Virtual accounts",
+    "No monthly fees",
+    "No setup fees",
+    "Easy to set up and start receiving payments",
+    "Access to all merchant back-office features",
+    "Simple setup and real-time statistics",
+    "Accept online payments in over 4 countries and 5 currencies",
+    "Make withdrawal requests at your own pace, according to your preferences"
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <MenuBar />
-      <div className="py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-primary">Pricing</h2>
-            <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Simple, transparent pricing
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-4">Transparent Pricing</h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A transparent pricing structure with no hidden fees. No minimum fees or hidden charges. 
+              With FreshPay, you only pay for successful transactions.
             </p>
           </div>
-          <div className="mt-16 flex justify-center">
-            <div className="rounded-3xl p-8 ring-1 ring-gray-200 lg:p-12">
-              <div className="flex-none">
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900">Pay as you go</h3>
-                <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-bold tracking-tight text-gray-900">1.4%</span>
-                  <span className="text-sm font-semibold leading-6 text-gray-600">per transaction</span>
-                </p>
-                <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
-                  {features.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
-                      <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          
+          <div className="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto">
+            <div className="space-y-6">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <div className="flex-shrink-0">
+                    <Check className="h-6 w-6 text-primary" />
+                  </div>
+                  <p className="text-gray-700">{feature}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );
