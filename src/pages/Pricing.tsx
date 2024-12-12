@@ -1,85 +1,47 @@
 import { MenuBar } from "@/components/MenuBar";
 import { Footer } from "@/components/Footer";
 import { Check } from "lucide-react";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Pricing = () => {
   const features = [
-    "No monthly fees",
-    "No setup fees",
-    "Easy to set up and start receiving payments",
-    "Access to all merchant back-office features",
-    "Simple setup and real-time statistics",
-    "Accept online payments in over 4 countries and 5 currencies",
-    "Make withdrawal requests at your own pace, according to your preferences"
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" }
+    "Accept payments",
+    "Recurring billing",
+    "Payment links",
+    "Virtual accounts",
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       <MenuBar />
-      <main className="flex-grow">
-        <div className="container mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Transparent Pricing</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A transparent pricing structure with no hidden fees. No minimum fees or hidden charges. 
-              With FreshPay, you only pay for successful transactions.
+      <div className="py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-base font-semibold leading-7 text-primary">Pricing</h2>
+            <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+              Simple, transparent pricing
             </p>
           </div>
-          
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto mb-16">
-            <div className="space-y-6">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0">
-                    <Check className="h-6 w-6 text-primary" />
-                  </div>
-                  <p className="text-gray-700">{feature}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Section */}
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
-            <div className="space-y-4 text-center">
-              <p className="text-lg">
-                <a href="mailto:info@gofreshpay.com" className="text-primary hover:underline">
-                  info@gofreshpay.com
-                </a>
-              </p>
-              <p className="text-gray-700">
-                Avenue Colonel Ebeya N°1430 / Immeuble ICM / Commune de la Gombe,<br />
-                Kinshasa RDC
-              </p>
-              <p className="text-gray-700">
-                Tel: <a href="tel:+243898900066" className="text-primary hover:underline">+243 898 900 066</a>
-              </p>
-              
-              <div className="flex justify-center space-x-6 mt-6">
-                {socialLinks.map(({ icon: Icon, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    className="text-gray-600 hover:text-primary transition-colors"
-                    aria-label={label}
-                  >
-                    <Icon className="h-6 w-6" />
-                  </a>
-                ))}
+          <div className="mt-16 flex justify-center">
+            <div className="rounded-3xl p-8 ring-1 ring-gray-200 lg:p-12">
+              <div className="flex-none">
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900">Pay as you go</h3>
+                <p className="mt-6 flex items-baseline gap-x-1">
+                  <span className="text-4xl font-bold tracking-tight text-gray-900">1.4%</span>
+                  <span className="text-sm font-semibold leading-6 text-gray-600">per transaction</span>
+                </p>
+                <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
+                  {features.map((feature) => (
+                    <li key={feature} className="flex gap-x-3">
+                      <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </main>
+      </div>
       <Footer />
     </div>
   );
