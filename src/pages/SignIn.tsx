@@ -9,7 +9,7 @@ const SignIn = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex flex-col items-center justify-center p-4">
-      <div className="mb-8">
+      <div>
         <img 
           src="/lovable-uploads/0ee92787-a6b7-4cef-96e3-83dd615b6e6b.png" 
           alt="FreshPay Logo" 
@@ -17,7 +17,7 @@ const SignIn = () => {
         />
       </div>
       
-      <div className="w-full max-w-md bg-secondary p-8 rounded-lg shadow-lg">
+      <div className="w-full max-w-md bg-secondary p-8 rounded-lg shadow-lg mt-8">
         <h1 className="text-2xl font-semibold text-center text-white mb-8">
           LOG IN TO YOUR ACCOUNT
         </h1>
