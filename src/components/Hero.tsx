@@ -2,10 +2,11 @@ import { CreditCard, Globe, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EmailDialog } from "./EmailDialog";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Hero = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [showEmailDialog, setShowEmailDialog] = useState(
     location.state?.openEmailDialog || false
   );
@@ -35,7 +36,7 @@ export const Hero = () => {
               variant="outline" 
               size="lg" 
               className="h-12 px-6 border-secondary text-secondary hover:bg-secondary/10"
-              onClick={() => setShowEmailDialog(true)}
+              onClick={() => navigate("/contact-sales")}
             >
               Contact sales
             </Button>
