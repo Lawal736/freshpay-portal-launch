@@ -10,7 +10,7 @@ import { Facebook, Twitter, Instagram, Linkedin, MessageSquare, Phone } from "lu
 const Index = () => {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Twitter, href: "https://x.com/freshpayc?s=21", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: MessageSquare, href: "#", label: "Telegram" },
@@ -51,6 +51,8 @@ const Index = () => {
                 <a
                   key={link.label}
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary transition-colors"
                   aria-label={link.label}
                 >
