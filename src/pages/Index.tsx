@@ -5,14 +5,16 @@ import { Footer } from "@/components/Footer";
 import { TrustedPartners } from "@/components/TrustedPartners";
 import { MenuBar } from "@/components/MenuBar";
 import { PoweringGrowth } from "@/components/PoweringGrowth";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, MessageSquare, Phone } from "lucide-react";
 
 const Index = () => {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" }
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: MessageSquare, href: "#", label: "Telegram" },
+    { icon: Phone, href: "#", label: "Skype" }
   ];
 
   return (
