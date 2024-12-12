@@ -8,6 +8,14 @@ import { useState } from "react"
 export const NavigationItems = () => {
   const [showEmailDialog, setShowEmailDialog] = useState(false);
 
+  const scrollToFeatures = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const featuresSection = document.querySelector('section.py-24.bg-white');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <NavigationMenu>
@@ -16,19 +24,19 @@ export const NavigationItems = () => {
             <NavigationMenuTrigger className="bg-background">Products</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
-                <ListItem href="/payments" title="Payments">
+                <ListItem href="#features" title="Payments" onClick={scrollToFeatures}>
                   Accept payments from multiple channels
                 </ListItem>
-                <ListItem href="/transfers" title="Transfers">
+                <ListItem href="#features" title="Transfers" onClick={scrollToFeatures}>
                   Send money across borders
                 </ListItem>
-                <ListItem href="/commerce" title="Commerce">
+                <ListItem href="#features" title="Commerce" onClick={scrollToFeatures}>
                   <div className="flex items-center space-x-2">
                     <ShoppingCart className="h-4 w-4" />
                     <span>Launch your online business</span>
                   </div>
                 </ListItem>
-                <ListItem href="/global" title="Global Reach">
+                <ListItem href="#features" title="Global Reach" onClick={scrollToFeatures}>
                   <div className="flex items-center space-x-2">
                     <Globe className="h-4 w-4" />
                     <span>Expand to new markets</span>
@@ -37,6 +45,7 @@ export const NavigationItems = () => {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
+
           <NavigationMenuItem>
             <NavigationMenuTrigger className="bg-background">Developers</NavigationMenuTrigger>
             <NavigationMenuContent>
