@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { useNavigate, useLocation } from "react-router-dom"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,8 +17,20 @@ const countries = [
 
 export const CountryFlags = () => {
   const navigate = useNavigate()
-  const [selectedCountry, setSelectedCountry] = useState(countries[0])
+  const location = useLocation()
   const [isOpen, setIsOpen] = useState(false)
+  const [selectedCountry, setSelectedCountry] = useState(countries[0]) // Default to DR Congo
+
+  // Update selected country based on current route
+  useEffect(() => {
+    if (location.pathname === "/nigeria-interest") {
+      setSelectedCountry(countries.find(c => c.code === "NG") || countries[0])
+    } else if (location.pathname === "/ghana-interest") {
+      setSelectedCountry(countries.find(c => c.code === "GH") || countries[0])
+    } else {
+      setSelectedCountry(countries[0]) // Set to DR Congo for homepage and other routes
+    }
+  }, [location.pathname])
 
   const handleCountrySelect = (country: typeof countries[0]) => {
     setSelectedCountry(country)
@@ -27,6 +39,8 @@ export const CountryFlags = () => {
       navigate("/nigeria-interest")
     } else if (country.code === "GH") {
       navigate("/ghana-interest")
+    } else if (country.code === "CD") {
+      navigate("/") // Navigate to homepage for DR Congo
     }
   }
 
