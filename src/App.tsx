@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
 import ContactSales from "./pages/ContactSales";
 import NigeriaInterest from "./pages/NigeriaInterest";
+import GhanaInterest from "./pages/GhanaInterest";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/create-account" element={<Navigate to="/" state={{ openEmailDialog: true }} />} />
           <Route path="/contact-sales" element={<ContactSales />} />
           <Route path="/nigeria-interest" element={<NigeriaInterest />} />
+          <Route path="/ghana-interest" element={<GhanaInterest />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

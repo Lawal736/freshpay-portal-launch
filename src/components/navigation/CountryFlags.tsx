@@ -25,6 +25,8 @@ export const CountryFlags = () => {
     setIsOpen(false)
     if (country.code === "NG") {
       navigate("/nigeria-interest")
+    } else if (country.code === "GH") {
+      navigate("/ghana-interest")
     }
   }
 
