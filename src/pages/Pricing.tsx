@@ -1,7 +1,7 @@
 import { MenuBar } from "@/components/MenuBar";
 import { Footer } from "@/components/Footer";
 import { Check } from "lucide-react";
-import { Facebook, Twitter, Instagram, Linkedin, TikTok } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Pricing = () => {
   const features = [
@@ -18,8 +18,7 @@ const Pricing = () => {
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: TikTok, href: "#", label: "TikTok" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" }
   ];
 
   return (
