@@ -53,7 +53,14 @@ export const NavigationItems = () => {
                 <ListItem href="/documentation" title="Documentation">
                   Detailed guides and API references
                 </ListItem>
-                <ListItem href="/api-reference" title="API Reference">
+                <ListItem 
+                  href="https://drive.google.com/file/d/1pRVAOWYq6E9RF3CpPLAN4jKGXiuGkRQl/view?usp=sharing" 
+                  title="API Reference"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open("https://drive.google.com/file/d/1pRVAOWYq6E9RF3CpPLAN4jKGXiuGkRQl/view?usp=sharing", "_blank");
+                  }}
+                >
                   Complete API documentation
                 </ListItem>
               </ul>
