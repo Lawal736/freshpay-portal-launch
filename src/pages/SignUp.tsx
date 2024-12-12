@@ -46,7 +46,7 @@ const SignUp = () => {
   return (
     <div className="min-h-screen bg-white">
       <MenuBar />
-      <div className="h-16 bg-[#F5821F]"></div>
+      <div className="h-16 bg-primary"></div>
       <div className="container max-w-xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-semibold text-center mb-8">CREATE YOUR ACCOUNT</h1>
         
@@ -197,7 +197,7 @@ const SignUp = () => {
               )}
             />
 
-            <Button type="submit" className="w-full bg-[#3BB75E] hover:bg-[#3BB75E]/90">
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
               Create My Account
             </Button>
 
