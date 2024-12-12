@@ -8,7 +8,7 @@ const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen bg-primary flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex flex-col items-center justify-center p-4">
       <div className="mb-8">
         <img 
           src="/lovable-uploads/0ee92787-a6b7-4cef-96e3-83dd615b6e6b.png" 
