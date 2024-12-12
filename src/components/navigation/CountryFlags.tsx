@@ -8,11 +8,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 const countries = [
-  { code: "CD", name: "DR Congo", flag: "/lovable-uploads/drc-flag.png" },
-  { code: "NG", name: "Nigeria", flag: "/lovable-uploads/nigeria-flag.png" },
-  { code: "GH", name: "Ghana", flag: "/lovable-uploads/ghana-flag.png" },
-  { code: "CM", name: "Cameroon", flag: "/lovable-uploads/cameroon-flag.png" },
-  { code: "SN", name: "Senegal", flag: "/lovable-uploads/senegal-flag.png" },
+  { code: "CD", name: "DR Congo", flag: "/lovable-uploads/9ee27306-f972-4ceb-a009-a29730eaa458.png" },
+  { code: "CM", name: "Cameroon", flag: "/lovable-uploads/7509201e-2ed9-4a00-ad3b-0d0435c1ed2f.png" },
+  { code: "NG", name: "Nigeria", flag: "/lovable-uploads/923e1163-516f-4eab-b437-d4d2d5682200.png" },
+  { code: "GH", name: "Ghana", flag: "/lovable-uploads/5c5c8d51-8a27-4e25-982e-e37d75ac8d1c.png" },
+  { code: "SN", name: "Senegal", flag: "/lovable-uploads/7797037e-9c52-41c7-9a4d-969470a2946a.png" },
 ]
 
 export const CountryFlags = () => {
