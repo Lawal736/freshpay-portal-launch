@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,8 +16,17 @@ const countries = [
 ]
 
 export const CountryFlags = () => {
+  const navigate = useNavigate()
   const [selectedCountry, setSelectedCountry] = useState(countries[0])
   const [isOpen, setIsOpen] = useState(false)
+
+  const handleCountrySelect = (country: typeof countries[0]) => {
+    setSelectedCountry(country)
+    setIsOpen(false)
+    if (country.code === "NG") {
+      navigate("/nigeria-interest")
+    }
+  }
 
   return (
     <div 
@@ -37,10 +47,7 @@ export const CountryFlags = () => {
           {countries.map((country) => (
             <DropdownMenuItem
               key={country.code}
-              onClick={() => {
-                setSelectedCountry(country)
-                setIsOpen(false)
-              }}
+              onClick={() => handleCountrySelect(country)}
               className="flex items-center gap-2 cursor-pointer hover:bg-gray-100"
             >
               <img

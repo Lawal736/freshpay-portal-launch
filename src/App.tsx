@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
 import ContactSales from "./pages/ContactSales";
+import NigeriaInterest from "./pages/NigeriaInterest";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/create-account" element={<Navigate to="/" state={{ openEmailDialog: true }} />} />
           <Route path="/contact-sales" element={<ContactSales />} />
+          <Route path="/nigeria-interest" element={<NigeriaInterest />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
