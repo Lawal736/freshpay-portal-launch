@@ -50,7 +50,14 @@ export const NavigationItems = () => {
             <NavigationMenuTrigger className="bg-background">Developers</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 bg-white">
-                <ListItem href="/documentation" title="Documentation">
+                <ListItem 
+                  href="https://drive.google.com/file/d/1pRVAOWYq6E9RF3CpPLAN4jKGXiuGkRQl/view?usp=sharing" 
+                  title="Documentation"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open("https://drive.google.com/file/d/1pRVAOWYq6E9RF3CpPLAN4jKGXiuGkRQl/view?usp=sharing", "_blank");
+                  }}
+                >
                   Detailed guides and API references
                 </ListItem>
                 <ListItem 
