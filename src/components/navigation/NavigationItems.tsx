@@ -8,9 +8,9 @@ export const NavigationItems = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-background">Products</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
               <ListItem href="/payments" title="Payments">
                 Accept payments from multiple channels
               </ListItem>
@@ -33,9 +33,9 @@ export const NavigationItems = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Developers</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-background">Developers</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 bg-white">
               <ListItem href="/documentation" title="Documentation">
                 Detailed guides and API references
               </ListItem>
@@ -46,9 +46,9 @@ export const NavigationItems = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-background">Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4">
+            <ul className="grid w-[400px] gap-3 p-4 bg-white">
               <ListItem href="/support" title="Support">
                 Get help from our support team
               </ListItem>
