@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { CountryFlags } from "./CountryFlags"
 import { EmailDialog } from "../EmailDialog"
 import { useState } from "react"
+import { Button } from "../ui/button"
 
 export const AuthButtons = () => {
   const [showEmailDialog, setShowEmailDialog] = useState(false);
@@ -12,12 +13,12 @@ export const AuthButtons = () => {
         Sign in
       </Link>
       <div className="flex items-center gap-2">
-        <button
+        <Button
           onClick={() => setShowEmailDialog(true)}
-          className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition-colors"
+          className="whitespace-nowrap"
         >
           Become a Merchant
-        </button>
+        </Button>
         <CountryFlags />
       </div>
       <EmailDialog open={showEmailDialog} onOpenChange={setShowEmailDialog} />

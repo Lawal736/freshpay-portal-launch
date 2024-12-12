@@ -4,8 +4,15 @@ import { Link } from "react-router-dom"
 import { ListItem } from "./ListItem"
 import { EmailDialog } from "../EmailDialog"
 import { useState } from "react"
+import { Button } from "../ui/button"
 
-export const NavigationItems = () => {
+export const NavigationItems = ({ 
+  isMobile = false,
+  onItemClick = () => {}
+}: { 
+  isMobile?: boolean
+  onItemClick?: () => void
+}) => {
   const [showEmailDialog, setShowEmailDialog] = useState(false);
 
   const scrollToFeatures = (e: React.MouseEvent) => {
@@ -14,7 +21,136 @@ export const NavigationItems = () => {
     if (featuresSection) {
       featuresSection.scrollIntoView({ behavior: 'smooth' });
     }
+    onItemClick();
   };
+
+  if (isMobile) {
+    return (
+      <div className="flex flex-col space-y-4 px-2">
+        <div className="space-y-4">
+          <div className="text-sm font-medium">Products</div>
+          <div className="pl-4 space-y-3">
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start" 
+              onClick={scrollToFeatures}
+            >
+              Payments
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start" 
+              onClick={scrollToFeatures}
+            >
+              Transfers
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start" 
+              onClick={scrollToFeatures}
+            >
+              <div className="flex items-center space-x-2">
+                <ShoppingCart className="h-4 w-4" />
+                <span>Commerce</span>
+              </div>
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start" 
+              onClick={scrollToFeatures}
+            >
+              <div className="flex items-center space-x-2">
+                <Globe className="h-4 w-4" />
+                <span>Global Reach</span>
+              </div>
+            </Button>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="text-sm font-medium">Developers</div>
+          <div className="pl-4 space-y-3">
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://drive.google.com/file/d/1pRVAOWYq6E9RF3CpPLAN4jKGXiuGkRQl/view?usp=sharing", "_blank");
+                onItemClick();
+              }}
+            >
+              Documentation
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://drive.google.com/file/d/1pRVAOWYq6E9RF3CpPLAN4jKGXiuGkRQl/view?usp=sharing", "_blank");
+                onItemClick();
+              }}
+            >
+              API Reference
+            </Button>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="text-sm font-medium">Resources</div>
+          <div className="pl-4 space-y-3">
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
+              onClick={() => {
+                window.location.href = "skype:live:lawalm?chat";
+                onItemClick();
+              }}
+            >
+              Support
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
+              onClick={() => {
+                setShowEmailDialog(true);
+                onItemClick();
+              }}
+            >
+              Contact
+            </Button>
+          </div>
+        </div>
+
+        <Link 
+          to="/pricing" 
+          className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
+          onClick={onItemClick}
+        >
+          Pricing
+        </Link>
+
+        {/* Mobile Auth Buttons */}
+        <div className="pt-4 border-t">
+          <Link 
+            to="/signin" 
+            className="block px-4 py-2 text-sm hover:bg-accent rounded-md"
+            onClick={onItemClick}
+          >
+            Sign in
+          </Link>
+          <Button
+            className="w-full mt-2"
+            onClick={() => {
+              setShowEmailDialog(true);
+              onItemClick();
+            }}
+          >
+            Become a Merchant
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -103,5 +239,5 @@ export const NavigationItems = () => {
       </NavigationMenu>
       <EmailDialog open={showEmailDialog} onOpenChange={setShowEmailDialog} />
     </>
-  )
-}
+  );
+};
