@@ -2,9 +2,13 @@ import { CreditCard, Globe, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EmailDialog } from "./EmailDialog";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const Hero = () => {
-  const [showEmailDialog, setShowEmailDialog] = useState(false);
+  const location = useLocation();
+  const [showEmailDialog, setShowEmailDialog] = useState(
+    location.state?.openEmailDialog || false
+  );
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 pt-20 pb-16 md:pt-32 md:pb-24">
