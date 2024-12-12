@@ -4,11 +4,13 @@ import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Link } from "react-router-dom";
 import { Eye } from "lucide-react";
+import { africanCountryCodes } from "@/utils/countryData";
 
 const formSchema = z.object({
   country: z.string(),
@@ -17,6 +19,7 @@ const formSchema = z.object({
   lastName: z.string().min(2),
   email: z.string().email(),
   phoneNumber: z.string().min(10),
+  countryCode: z.string(),
   password: z.string().min(8),
   businessType: z.enum(["starter", "registered"]),
   isDeveloper: z.enum(["yes", "no"]),
@@ -26,7 +29,8 @@ const SignUp = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      country: "Nigeria",
+      country: "DR Congo",
+      countryCode: "+243",
       businessType: "starter",
       isDeveloper: "no",
     },
@@ -38,6 +42,7 @@ const SignUp = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <MenuBar />
       <div className="h-16 bg-primary"></div>
       <div className="container max-w-xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-semibold text-center mb-8">CREATE YOUR ACCOUNT</h1>
@@ -50,14 +55,29 @@ const SignUp = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Country</FormLabel>
-                  <FormControl>
-                    <div className="flex justify-between items-center">
-                      <Input {...field} />
-                      <Link to="#" className="text-blue-600 text-sm ml-2">
-                        Other countries
-                      </Link>
-                    </div>
-                  </FormControl>
+                  <Select 
+                    onValueChange={(value) => {
+                      field.onChange(value);
+                      const countryData = africanCountryCodes.find(c => c.country === value);
+                      if (countryData) {
+                        form.setValue('countryCode', countryData.code);
+                      }
+                    }} 
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a country" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {africanCountryCodes.map((country) => (
+                        <SelectItem key={country.code} value={country.country}>
+                          {country.country}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </FormItem>
               )}
             />
@@ -114,21 +134,40 @@ const SignUp = () => {
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="phoneNumber"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
-                  <FormControl>
-                    <div className="flex gap-2">
-                      <Input className="w-24" value="+234" readOnly />
+            <div className="space-y-2">
+              <FormLabel>Phone Number</FormLabel>
+              <div className="flex gap-2">
+                <FormField
+                  control={form.control}
+                  name="countryCode"
+                  render={({ field }) => (
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger className="w-[140px]">
+                          <SelectValue placeholder="Select code" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {africanCountryCodes.map((country) => (
+                          <SelectItem key={country.code} value={country.code}>
+                            {country.code} ({country.country})
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phoneNumber"
+                  render={({ field }) => (
+                    <FormControl>
                       <Input {...field} className="flex-1" placeholder="802 123 4567" />
-                    </div>
-                  </FormControl>
-                </FormItem>
-              )}
-            />
+                    </FormControl>
+                  )}
+                />
+              </div>
+            </div>
 
             <FormField
               control={form.control}
