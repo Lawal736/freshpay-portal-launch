@@ -15,7 +15,8 @@ export const AuthButtons = () => {
       <div className="flex items-center gap-2">
         <Button
           onClick={() => setShowEmailDialog(true)}
-          className="whitespace-nowrap"
+          className="whitespace-nowrap px-4"
+          size="sm"
         >
           Become a Merchant
         </Button>
