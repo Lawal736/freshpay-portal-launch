@@ -4,6 +4,7 @@ import { Stats } from "@/components/Stats";
 import { Footer } from "@/components/Footer";
 import { TrustedPartners } from "@/components/TrustedPartners";
 import { MenuBar } from "@/components/MenuBar";
+import { PoweringGrowth } from "@/components/PoweringGrowth";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
       <Hero />
       <Features />
       <TrustedPartners />
+      <PoweringGrowth />
       <Stats />
       
       {/* Contact Section */}
