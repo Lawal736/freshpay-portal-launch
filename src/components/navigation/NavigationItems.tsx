@@ -49,7 +49,7 @@ export const NavigationItems = () => {
           <NavigationMenuTrigger className="bg-background">Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 bg-white">
-              <ListItem href="/support" title="Support">
+              <ListItem href="skype:lawalm?chat" title="Support">
                 Get help from our support team
               </ListItem>
               <ListItem href="/contact" title="Contact">
