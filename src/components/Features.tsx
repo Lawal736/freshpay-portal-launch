@@ -29,18 +29,18 @@ export const Features = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container px-4 md:px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-secondary">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight sm:text-4xl text-secondary">
             Comprehensive Financial Solutions
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-base md:text-lg text-gray-600">
             Integrated services that power your financial operations
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 md:mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <div
               key={feature.title}
@@ -50,7 +50,7 @@ export const Features = () => {
                 <feature.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="mt-4 text-xl font-semibold text-secondary">{feature.title}</h3>
-              <p className="mt-2 text-center text-gray-600">
+              <p className="mt-2 text-center text-sm md:text-base text-gray-600">
                 {feature.description}
               </p>
             </div>

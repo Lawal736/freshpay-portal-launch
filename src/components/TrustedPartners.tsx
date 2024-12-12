@@ -21,13 +21,13 @@ export const TrustedPartners = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-secondary">
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="container px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight sm:text-4xl text-secondary">
             Trusted Partners
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-base md:text-lg text-gray-600">
             Integrated with leading mobile money operators in DRC and Cameroon
           </p>
           <p className="mt-2 text-sm text-gray-500">
@@ -35,18 +35,18 @@ export const TrustedPartners = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="flex flex-col items-center space-y-4 p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="flex flex-col items-center space-y-4 p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-200 w-full max-w-[250px]"
             >
               <img
                 src={partner.logo}
                 alt={`${partner.name} logo`}
-                className="h-16 w-auto object-contain"
+                className="h-12 md:h-16 w-auto object-contain"
               />
-              <p className="text-lg font-semibold text-secondary">{partner.name}</p>
+              <p className="text-base md:text-lg font-semibold text-secondary">{partner.name}</p>
             </div>
           ))}
         </div>

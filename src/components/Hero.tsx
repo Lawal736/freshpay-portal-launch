@@ -12,22 +12,22 @@ export const Hero = () => {
   );
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 pt-20 pb-16 md:pt-32 md:pb-24">
-      <div className="container relative z-10">
+    <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 pt-16 pb-12 md:pt-32 md:pb-24">
+      <div className="container relative z-10 px-4 md:px-6">
         <div className="text-center">
-          <h1 className="animate-fade-up text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+          <h1 className="animate-fade-up text-3xl font-bold tracking-tight sm:text-5xl md:text-7xl">
             <span className="text-primary">Fresh</span>
             <span className="text-secondary">Pay</span>{" "}
             <span className="block mt-2">for growing businesses</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl animate-fade-up text-lg leading-8 text-gray-600 [animation-delay:200ms]">
+          <p className="mx-auto mt-6 max-w-2xl animate-fade-up text-base md:text-lg leading-7 text-gray-600 [animation-delay:200ms] px-4">
             Accept payments, send payouts, and manage your business's entire
             financial operations with FreshPay's powerful platform.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-up [animation-delay:400ms]">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6 animate-fade-up [animation-delay:400ms] px-4">
             <Button 
               size="lg" 
-              className="h-12 px-6 bg-primary hover:bg-primary/90"
+              className="w-full sm:w-auto h-12 px-6 bg-primary hover:bg-primary/90"
               onClick={() => navigate("/create-account")}
             >
               Create free account
@@ -35,7 +35,7 @@ export const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="h-12 px-6 border-secondary text-secondary hover:bg-secondary/10"
+              className="w-full sm:w-auto h-12 px-6 border-secondary text-secondary hover:bg-secondary/10"
               onClick={() => navigate("/contact-sales")}
             >
               Contact sales
@@ -43,7 +43,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 px-4">
           {[
             {
               icon: Globe,

@@ -7,7 +7,9 @@ export const MenuBar = () => {
     <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b">
       <div className="flex h-16 items-center px-4 container mx-auto">
         <Logo />
-        <NavigationItems />
+        <div className="hidden md:block">
+          <NavigationItems />
+        </div>
         <AuthButtons />
       </div>
     </div>
