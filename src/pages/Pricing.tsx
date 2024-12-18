@@ -3,11 +3,18 @@ import { Footer } from "@/components/Footer";
 import { Check } from "lucide-react";
 
 const Pricing = () => {
-  const features = [
+  const standardFeatures = [
     "Accept payments",
     "Recurring billing",
     "Payment links",
     "Virtual accounts",
+  ];
+
+  const ecommerceFeatures = [
+    "Accept payments",
+    "Payment links",
+    "Virtual accounts",
+    "Deposit & Payout options",
   ];
 
   return (
@@ -21,7 +28,7 @@ const Pricing = () => {
               Simple, transparent pricing
             </p>
           </div>
-          <div className="mt-16 flex justify-center">
+          <div className="mt-16 grid gap-8 md:grid-cols-2 md:max-w-4xl mx-auto">
             <div className="rounded-3xl p-8 ring-1 ring-gray-200 lg:p-12">
               <div className="flex-none">
                 <h3 className="text-2xl font-bold tracking-tight text-gray-900">Pay as you go</h3>
@@ -30,7 +37,35 @@ const Pricing = () => {
                   <span className="text-sm font-semibold leading-6 text-gray-600">per transaction</span>
                 </p>
                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
-                  {features.map((feature) => (
+                  {standardFeatures.map((feature) => (
+                    <li key={feature} className="flex gap-x-3">
+                      <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-3xl p-8 ring-1 ring-gray-200 lg:p-12">
+              <div className="flex-none">
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900">E-Commerce with Deposit</h3>
+                <div className="mt-6 space-y-4">
+                  <div>
+                    <p className="flex items-baseline gap-x-1">
+                      <span className="text-4xl font-bold tracking-tight text-gray-900">2.5%</span>
+                      <span className="text-sm font-semibold leading-6 text-gray-600">deposit fee</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p className="flex items-baseline gap-x-1">
+                      <span className="text-4xl font-bold tracking-tight text-gray-900">2.0%</span>
+                      <span className="text-sm font-semibold leading-6 text-gray-600">payout fee</span>
+                    </p>
+                  </div>
+                </div>
+                <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
+                  {ecommerceFeatures.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
                       {feature}
