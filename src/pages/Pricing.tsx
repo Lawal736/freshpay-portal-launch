@@ -49,20 +49,16 @@ const Pricing = () => {
 
             <div className="rounded-3xl p-8 ring-1 ring-gray-200 lg:p-12">
               <div className="flex-none">
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900">E-Commerce with Deposit</h3>
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900">E-Commerce</h3>
                 <div className="mt-6 space-y-4">
-                  <div>
-                    <p className="flex items-baseline gap-x-1">
-                      <span className="text-4xl font-bold tracking-tight text-gray-900">2.5%</span>
-                      <span className="text-sm font-semibold leading-6 text-gray-600">deposit fee</span>
-                    </p>
-                  </div>
-                  <div>
-                    <p className="flex items-baseline gap-x-1">
-                      <span className="text-4xl font-bold tracking-tight text-gray-900">2.0%</span>
-                      <span className="text-sm font-semibold leading-6 text-gray-600">payout fee</span>
-                    </p>
-                  </div>
+                  <p className="flex items-baseline gap-x-1">
+                    <span className="text-4xl font-bold tracking-tight text-gray-900">2.5%</span>
+                    <span className="text-sm font-semibold leading-6 text-gray-600">per transaction for deposits</span>
+                  </p>
+                  <p className="flex items-baseline gap-x-1">
+                    <span className="text-4xl font-bold tracking-tight text-gray-900">2.0%</span>
+                    <span className="text-sm font-semibold leading-6 text-gray-600">per transaction for payouts</span>
+                  </p>
                 </div>
                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
                   {ecommerceFeatures.map((feature) => (
