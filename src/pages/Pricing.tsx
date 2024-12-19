@@ -52,24 +52,26 @@ const Pricing = () => {
       <MenuBar />
       <div className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center flex items-center justify-center gap-4">
-            <h2 className="text-base font-semibold leading-7 text-primary">Pricing</h2>
-            <Select
-              value={selectedCountry}
-              onValueChange={setSelectedCountry}
-            >
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select country" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="cd">DR Congo</SelectItem>
-                <SelectItem value="cm">Cameroon</SelectItem>
-              </SelectContent>
-            </Select>
+          <div className="mx-auto max-w-4xl mb-8">
+            <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+              <h2 className="text-base font-semibold leading-7 text-primary">Pricing</h2>
+              <Select
+                value={selectedCountry}
+                onValueChange={setSelectedCountry}
+              >
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Select country" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="cd">DR Congo</SelectItem>
+                  <SelectItem value="cm">Cameroon</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <p className="mt-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl text-center">
+              Simple, transparent pricing
+            </p>
           </div>
-          <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl text-center">
-            Simple, transparent pricing
-          </p>
           <div className="mt-16 grid gap-8 md:grid-cols-2 md:max-w-4xl mx-auto">
             <div className="rounded-3xl p-8 ring-1 ring-gray-200 lg:p-12">
               <div className="flex-none">
