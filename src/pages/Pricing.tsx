@@ -8,6 +8,7 @@ const Pricing = () => {
     "Recurring billing",
     "Payment links",
     "Virtual accounts",
+    "Deposit & Payout options",
   ];
 
   const ecommerceFeatures = [
@@ -31,11 +32,13 @@ const Pricing = () => {
           <div className="mt-16 grid gap-8 md:grid-cols-2 md:max-w-4xl mx-auto">
             <div className="rounded-3xl p-8 ring-1 ring-gray-200 lg:p-12">
               <div className="flex-none">
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900">Pay as you go</h3>
-                <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-bold tracking-tight text-gray-900">3.5%</span>
-                  <span className="text-sm font-semibold leading-6 text-gray-600">per transaction</span>
-                </p>
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900">Sport Betting</h3>
+                <div className="mt-6 space-y-4">
+                  <p className="flex items-baseline gap-x-1">
+                    <span className="text-4xl font-bold tracking-tight text-gray-900">3.5%</span>
+                    <span className="text-sm font-semibold leading-6 text-gray-600">per transaction</span>
+                  </p>
+                </div>
                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
                   {standardFeatures.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
@@ -53,11 +56,11 @@ const Pricing = () => {
                 <div className="mt-6 space-y-4">
                   <p className="flex items-baseline gap-x-1">
                     <span className="text-4xl font-bold tracking-tight text-gray-900">2.5%</span>
-                    <span className="text-sm font-semibold leading-6 text-gray-600">per transaction for deposits</span>
+                    <span className="text-4xl font-semibold leading-6 text-gray-600">per transaction for deposits</span>
                   </p>
                   <p className="flex items-baseline gap-x-1">
                     <span className="text-4xl font-bold tracking-tight text-gray-900">2.0%</span>
-                    <span className="text-sm font-semibold leading-6 text-gray-600">per transaction for payouts</span>
+                    <span className="text-4xl font-semibold leading-6 text-gray-600">per transaction for payouts</span>
                   </p>
                 </div>
                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
