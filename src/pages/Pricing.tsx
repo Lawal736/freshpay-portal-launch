@@ -13,21 +13,6 @@ import {
 const Pricing = () => {
   const [selectedCountry, setSelectedCountry] = useState("cd");
 
-  const standardFeatures = [
-    "Accept payments",
-    "Recurring billing",
-    "Payment links",
-    "Virtual accounts",
-    "Deposit & Payout options",
-  ];
-
-  const ecommerceFeatures = [
-    "Accept payments",
-    "Payment links",
-    "Virtual accounts",
-    "Deposit & Payout options",
-  ];
-
   const getPricing = (country: string) => {
     switch (country) {
       case "cm":
@@ -59,12 +44,16 @@ const Pricing = () => {
                 value={selectedCountry}
                 onValueChange={setSelectedCountry}
               >
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Select country" />
+                <SelectTrigger className="w-[180px] bg-white border-gray-200 hover:bg-gray-50">
+                  <SelectValue className="text-sm font-medium" placeholder="Select country" />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="cd">DR Congo</SelectItem>
-                  <SelectItem value="cm">Cameroon</SelectItem>
+                <SelectContent className="bg-white">
+                  <SelectItem value="cd" className="text-sm font-medium cursor-pointer hover:bg-gray-50">
+                    DR Congo
+                  </SelectItem>
+                  <SelectItem value="cm" className="text-sm font-medium cursor-pointer hover:bg-gray-50">
+                    Cameroon
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -83,7 +72,7 @@ const Pricing = () => {
                   </p>
                 </div>
                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
-                  {standardFeatures.map((feature) => (
+                  {["Accept payments", "Recurring billing", "Payment links", "Virtual accounts", "Deposit & Payout options"].map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
                       {feature}
@@ -107,7 +96,7 @@ const Pricing = () => {
                   </p>
                 </div>
                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
-                  {ecommerceFeatures.map((feature) => (
+                  {["Accept payments", "Payment links", "Virtual accounts", "Deposit & Payout options"].map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
                       {feature}
