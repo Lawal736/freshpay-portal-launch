@@ -92,6 +92,17 @@ export const NavigationItems = ({
             >
               API Reference
             </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://sandbox.gofreshpay.com/", "_blank");
+                onItemClick();
+              }}
+            >
+              Sandbox
+            </Button>
           </div>
         </div>
 
@@ -205,6 +216,16 @@ export const NavigationItems = ({
                   }}
                 >
                   Complete API documentation
+                </ListItem>
+                <ListItem 
+                  href="https://sandbox.gofreshpay.com/" 
+                  title="Sandbox"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open("https://sandbox.gofreshpay.com/", "_blank");
+                  }}
+                >
+                  Test your integration
                 </ListItem>
               </ul>
             </NavigationMenuContent>
