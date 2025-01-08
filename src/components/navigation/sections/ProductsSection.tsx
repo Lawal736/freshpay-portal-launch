@@ -11,11 +11,11 @@ interface ProductsSectionProps {
 export const ProductsSection = ({ isMobile, onItemClick = () => {} }: ProductsSectionProps) => {
   const scrollToFeatures = (e: React.MouseEvent) => {
     e.preventDefault();
-    const featuresSection = document.querySelector('section.py-24.bg-white');
+    const featuresSection = document.querySelector('section.py-16.md\\:py-24.bg-white');
     if (featuresSection) {
       featuresSection.scrollIntoView({ behavior: 'smooth' });
+      onItemClick();
     }
-    onItemClick();
   };
 
   if (isMobile) {
