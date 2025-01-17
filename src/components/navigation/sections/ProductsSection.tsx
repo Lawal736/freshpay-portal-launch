@@ -1,17 +1,21 @@
-import { Button } from "@/components/ui/button"
-import { ListItem } from "../ListItem"
-import { Globe, ShoppingCart } from "lucide-react"
-import { NavigationMenuContent, NavigationMenuItem, NavigationMenuTrigger } from "@/components/ui/navigation-menu"
+import { Link } from "react-router-dom";
+import {
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { ListItem } from "../ListItem";
 
 interface ProductsSectionProps {
-  isMobile?: boolean
-  onItemClick?: () => void
+  isMobile?: boolean;
+  onItemClick?: () => void;
 }
 
 export const ProductsSection = ({ isMobile, onItemClick = () => {} }: ProductsSectionProps) => {
   const scrollToFeatures = (e: React.MouseEvent) => {
     e.preventDefault();
-    const featuresSection = document.querySelector('section.py-16.md\\:py-24.bg-white');
+    const featuresSection = document.querySelector('#features');
     if (featuresSection) {
       featuresSection.scrollIntoView({ behavior: 'smooth' });
       onItemClick();
@@ -20,73 +24,53 @@ export const ProductsSection = ({ isMobile, onItemClick = () => {} }: ProductsSe
 
   if (isMobile) {
     return (
-      <div className="space-y-4">
-        <div className="text-sm font-medium">Products</div>
-        <div className="pl-4 space-y-3">
-          <Button 
-            variant="ghost" 
-            className="w-full justify-start" 
-            onClick={scrollToFeatures}
-          >
-            Payments
-          </Button>
-          <Button 
-            variant="ghost" 
-            className="w-full justify-start" 
-            onClick={scrollToFeatures}
-          >
-            Transfers
-          </Button>
-          <Button 
-            variant="ghost" 
-            className="w-full justify-start" 
-            onClick={scrollToFeatures}
-          >
-            <div className="flex items-center space-x-2">
-              <ShoppingCart className="h-4 w-4" />
-              <span>Commerce</span>
-            </div>
-          </Button>
-          <Button 
-            variant="ghost" 
-            className="w-full justify-start" 
-            onClick={scrollToFeatures}
-          >
-            <div className="flex items-center space-x-2">
-              <Globe className="h-4 w-4" />
-              <span>Global Reach</span>
-            </div>
-          </Button>
-        </div>
-      </div>
-    )
+      <>
+        <Link to="#" onClick={scrollToFeatures} className="block px-2 py-1 text-sm">
+          Payments
+        </Link>
+        <Link to="#" onClick={scrollToFeatures} className="block px-2 py-1 text-sm">
+          Transfers
+        </Link>
+      </>
+    );
   }
 
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="bg-background">Products</NavigationMenuTrigger>
+      <NavigationMenuTrigger>Products</NavigationMenuTrigger>
       <NavigationMenuContent>
-        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
-          <ListItem href="#features" title="Payments" onClick={scrollToFeatures}>
-            Accept payments from multiple channels
+        <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+          <li className="row-span-3">
+            <NavigationMenuLink asChild>
+              <Link
+                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                to="/"
+              >
+                <div className="mb-2 mt-4 text-lg font-medium">
+                  FreshPay Platform
+                </div>
+                <p className="text-sm leading-tight text-muted-foreground">
+                  Unified payments platform for your business growth
+                </p>
+              </Link>
+            </NavigationMenuLink>
+          </li>
+          <ListItem 
+            to="#" 
+            title="Payments" 
+            onClick={scrollToFeatures}
+          >
+            Accept payments online with multiple options
           </ListItem>
-          <ListItem href="#features" title="Transfers" onClick={scrollToFeatures}>
-            Send money across borders
-          </ListItem>
-          <ListItem href="#features" title="Commerce" onClick={scrollToFeatures}>
-            <div className="flex items-center space-x-2">
-              <ShoppingCart className="h-4 w-4" />
-              <span>Launch your online business</span>
-            </div>
-          </ListItem>
-          <ListItem href="#features" title="Global Reach" onClick={scrollToFeatures}>
-            <div className="flex items-center space-x-2">
-              <Globe className="h-4 w-4" />
-              <span>Expand to new markets</span>
-            </div>
+          <ListItem 
+            to="#" 
+            title="Transfers" 
+            onClick={scrollToFeatures}
+          >
+            Send money across borders seamlessly
           </ListItem>
         </ul>
       </NavigationMenuContent>
     </NavigationMenuItem>
-  )
-}
+  );
+};
